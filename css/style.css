@@ -1,0 +1,209 @@
+/*RESET*/
+@import url('reset.css');
+
+/*TIPOGRAFIA*/
+@import url('tipografia.css');
+
+/*CABEÇALHO*/
+body {
+    background-color: #242524;
+}
+.cabecalho {
+    position: fixed;
+    width: 100%;
+    float: left;
+    padding: 3%;
+    background-color: #242524;
+    box-shadow: 0 2px 2px #00000050;
+}
+.logo {
+    z-index: 999;
+    width: 200px;
+    height: 24px;
+    float: left;
+    margin: 0 5%;
+    background: url('../media/Logotipo/Logotipo-a.png') center center/100% no-repeat;
+    font-size: 0;
+}
+
+/*MENU*/
+.menu {
+    display: none;
+    width: 100vw;
+    max-width: 300;
+    height: 100vh;
+    position: fixed;
+    background-color: #28292850;
+    top: 0;
+    left: 0;
+    margin-top: calc(24px + 6%);
+}
+.menu ul {
+    width: 50%;
+    height: 100%;
+    padding: 0 3%;
+    float: left;
+    text-align: start;
+    background-color: #202120;
+    box-shadow: 1px 0px 8px #00000025;
+}
+.menu li {
+    width: 100%;
+    padding: 5% 0%;
+}
+.menu li a {
+    font-size: 1em;
+    color: #dedede;
+    font-weight: 400;
+}
+.menu li a i {
+    margin-right: 10%;
+}
+.menu li a:hover {
+    color: white;
+    transition: 0.25s ease;
+}
+.button-menu {
+    width: auto;
+    height: 24px;
+    float: left;
+    text-align: center;
+    color: #dedede;
+    cursor: pointer;
+    background-color: transparent;
+}
+#close-menu {
+    display: none;
+}
+
+/*BANNER*/
+.banner {
+    width: 100%;
+    float: left;
+    text-align: center;
+    margin-top: calc(24px + 6%);
+    padding: 3%;
+    background: linear-gradient(rgba(162, 2, 255) 10%, rgba(162, 2, 255, 0.5) 50%, #242524 100%);
+}
+.title {
+    width: 100%;
+}
+.title h3 {
+    color: #504550;
+    font-size: 1em;
+}
+.buttons {
+    width: 100%;
+}
+.button {
+    width: 80%;
+    text-align: center;
+    padding: 3% 4%;
+    margin: 5px 10%;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: 700;
+    background-color: #ff5100;
+    color: white;
+}
+#button-cadastrar {
+    float: left;
+}
+#button-sobre {
+    float: right;
+    background-color: white;
+    color: #ff5100;
+}
+button i {
+    margin-top: 1%;
+    float: right;
+}
+
+/*SERVIÇOS*/
+.servicos {
+    width: 100%;
+    padding: 3%;
+    float: left;
+}
+.servico {
+    width: 100%;
+    background: linear-gradient(to top, #00000099 0%, #24252400 20%);
+    text-align: left;
+    border-radius: 20px;
+    margin: 5% 0;
+    box-shadow:
+    2px 2px 5px #00000050,
+    -4px -4px 5px #a200ff99;
+}
+.servico h2 {
+    width: 100%;
+    padding: 80px 0;
+    text-align: center;
+    background: linear-gradient(to top, #242524 60%, #a200ff99 120%);
+    border-radius: 20px 20px 0 0;
+    font-size: 1.8em;
+}
+.servico div {
+    padding: 5%;
+}
+.servico h3, h4, p {
+    color: #504550;
+    margin: 5px 0;
+}
+
+/*NEWSLETTER*/
+.newsletter {
+    width: 100%;
+    float: left;
+    text-align: center;
+    background-color: white;
+    padding: 3%;
+}
+.newsletter h3 {
+    color: #504550;
+    font-size: 1em;
+}
+.newsletter form {
+    margin: 2% 0;
+}
+input {
+    width: 80%;
+    border-radius: 30px;
+    padding: 2% 4%;
+    box-shadow:
+    2px 2px 5px #00000050,
+    -4px -4px 5px #ffffff99;
+}
+
+/*FOOTER*/
+footer {
+    width: 100%;
+    padding: 3% 3% 1% 3%;
+    float: left;
+    text-align: center;
+}
+footer p {
+    font-weight: 600;
+    padding: 3% 3% 0 3%;
+}
+.social {
+    width: 100%;
+}
+.social a {
+    margin: 1%;
+}
+.social a i {
+    font-size: 1.5em;
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(to top, #eee 0%, #bcbcbc 60%);
+    border-radius: 50%;
+    padding: 12px;
+    color: white;
+    box-shadow:
+    2px 2px 5px #00000050,
+    -4px -4px 5px #ffffff99;
+}
+.social a i:hover {
+    background: linear-gradient(to top, #ff7b00 0%, #ff5100 60%);
+}

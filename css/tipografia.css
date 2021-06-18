@@ -1,0 +1,30 @@
+/*==========================
+TIPOGRAFIA
+==========================*/
+@import url('fontes.css');
+
+h1, h2, h3, h4, h5, h6, p {
+    color: #504550;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: 900;
+}
+h2 {
+    font-size: 1.8em;
+    font-weight: 700;
+}
+h3 {
+    font-size: 1.6em;
+    font-weight: 600;
+}
+h4, h5 {
+    font-weight: 500;
+}
+h4 {
+    font-size: 1.4em;
+}
+h5 {
+    font-size: 1.2em;
+}

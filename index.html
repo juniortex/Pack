@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+<!--1º CHARSET:-->
+<meta charset="UTF-8">
+
+<!--2º COMPATIBILIDADE:-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<!--3º ESCALA DE VISUALIZAÇÃO:-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--4º LINK DE ESTILO:-->
+<link rel="stylesheet" href="css/style.css">
+
+<!--5º FAVICON:-->
+<link rel="shortcut icon" href="favicon/01.png">
+
+<!--6º TÍTULO:-->
+<title>Pack Sexy</title>
+
+<!--7º DESCRIÇÃO:-->
+<meta name="description" content="Site prático que contem toda a tecnologia necessária para dexiá-lo responsivo.">
+
+<!--8º PALAVRAS CHAVES:-->
+<meta name="keywords" content="Site, responsivo, site responsivo">
+
+<!--9º INDEXAÇÃO:-->
+<meta name="robots" content="index, follow">
+
+<!--10º AUTOR DA PÁGINA:-->
+<meta name="autor" content="Junior Tex">
+
+<!--11º CONJUNTO DE ÍCONES:-->
+<script src="https://kit.fontawesome.com/57e0651ac6.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <header class="cabecalho">
+        <button class="button-menu" id="open-menu">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
+        <button class="button-menu" id="close-menu">
+            <i class="fa fa-bars fa-lg"></i>
+        </button>
+        <a href="index.html">
+            <h1 class="logo">Logo</h1>
+        </a>
+        <nav class="menu">
+            <ul class="">
+                <li><a href="#"><i class="fas fa-house-user"></i> Home</a></li>
+                <li><a href="#"><i class="fas fa-house-user"></i> Packs</a></li>
+                <li><a href="#"><i class="fas fa-house-user"></i> Fotos</a></li>
+                <li><a href="#"><i class="fas fa-house-user"></i> Vídeos</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section class="banner">
+        <div class="title">
+            <h2>BANNER RESPONSIVO</h2>
+            <h3>Um site deve ser funcional e bonito em todos os diferentes tipos de dispositivos.</h4>
+        </div>
+        <div class="buttons">
+            <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
+            <button id="button-sobre" class="button">SOBRE<i class="fas fa-info-circle"></i></button>
+        </div>
+    </section>
+
+    <main class="servicos">
+        <article class="servico">
+            <a href="#">
+                <h2>Artigo 01</h2>
+            </a>
+            <div class="inner">
+                <a href="#">
+                    <h3>Título</h3>
+                </a>
+                <h4>Sub-título</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+            </div>
+        </article>
+        <article class="servico">
+            <a href="#">
+                <h2>Artigo 02</h2>
+            </a>
+            <div class="inner">
+                <a href="#">
+                    <h3>Título</h3>
+                </a>
+                <h4>Sub-título</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+            </div>
+        </article>
+        <article class="servico">
+            <a href="#">
+                <h2>Artigo 03</h2>
+            </a>
+            <div class="inner">
+                <a href="#">
+                    <h3>Título</h3>
+                </a>
+                <h4>Sub-título</h4>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+            </div>
+        </article>
+    </main>
+
+    <section class="newsletter">
+        <h2>Inscreva-se agora</h2>
+        <h3>Receba novidades, dicas e muito mais!</h3>
+        <form action="">
+            <input type="email" name="email" placeholder="Digite seu e-mail...">
+            <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
+        </form>
+    </section>
+
+    <footer class="rodape">
+        <div class="social">
+            <a href=""><i class="fa fa-facebook"></i></a>
+            <a href=""><i class="fa fa-instagram"></i></a>
+            <a href=""><i class="fa fa-twitter"></i></a>
+        </div>
+        <p class="copyright">
+            COPYRIGHT &copy; 2021 - Todos os direitos reservados.
+        </p>
+    </footer>
+
+<!--JavaScript-->
+<script name="Jquery"
+src="https://code.jquery.com/jquery-3.6.0.js"
+integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+crossorigin="anonymous">
+</script>
+<script name="open/close menu">
+$("#open-menu").click(function(){
+    $(".menu").show();
+    $("#close-menu").show();
+    $("#open-menu").hide();
+});
+$("#close-menu").click(function(){
+    $(".menu").hide();
+    $("#close-menu").hide();
+    $("#open-menu").show();
+});
+</script>
+
+</body>
+
+</html>
