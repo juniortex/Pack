@@ -1,10 +1,10 @@
-/*RESET*/
-@import url('reset.css');
+//RESET:
+@import "sass/reset";
 
-/*TIPOGRAFIA*/
-@import url('tipografia.css');
+//TIPOGRAFIA:
+@import "sass/tipografia";
 
-/*CABEÇALHO*/
+//CABEÇALHO:
 body {
     background-color: #242524;
 }
@@ -26,7 +26,7 @@ body {
     font-size: 0;
 }
 
-/*MENU*/
+//MENU:
 .menu {
     display: none;
     width: 100vw;
@@ -76,7 +76,7 @@ body {
     display: none;
 }
 
-/*BANNER*/
+//BANNER:
 .banner {
     width: 100%;
     float: left;
@@ -119,7 +119,7 @@ button i {
     float: right;
 }
 
-/*SERVIÇOS*/
+//SERVIÇOS:
 .servicos {
     width: 100%;
     padding: 3%;
@@ -151,7 +151,7 @@ button i {
     margin: 5px 0;
 }
 
-/*NEWSLETTER*/
+//NEWSLETTER:
 .newsletter {
     width: 100%;
     float: left;
@@ -175,7 +175,7 @@ input {
     -4px -4px 5px #ffffff99;
 }
 
-/*FOOTER*/
+//FOOTER:
 footer {
     width: 100%;
     padding: 3% 3% 1% 3%;
