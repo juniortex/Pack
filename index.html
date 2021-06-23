@@ -39,12 +39,14 @@
 
 <body>
     <header class="cabecalho">
-        <button class="button-menu" id="open-menu">
-            <i class="fa fa-bars fa-lg"></i>
-        </button>
-        <button class="button-menu" id="close-menu">
-            <i class="fa fa-bars fa-lg"></i>
-        </button>
+        <div class="button-menu open">
+            <div class="barra" id="barra-1"></div>
+            <div class="barra" id="barra-2"></div>
+        </div>
+        <div class="button-menu close">
+            <div class="barra" id="barra-1"></div>
+            <div class="barra" id="barra-2"></div>
+        </div>
         <a href="index.html">
             <h1 class="logo">Logo</h1>
         </a>
@@ -135,15 +137,15 @@ integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous">
 </script>
 <script name="open/close menu">
-$("#open-menu").click(function(){
+$(".open").click(function(){
     $(".menu").show();
-    $("#close-menu").show();
-    $("#open-menu").hide();
+    $(".close").show();
+    $(".open").hide();
 });
-$("#close-menu").click(function(){
+$(".close").click(function(){
     $(".menu").hide();
-    $("#close-menu").hide();
-    $("#open-menu").show();
+    $(".close").hide();
+    $(".open").show();
 });
 </script>
 
