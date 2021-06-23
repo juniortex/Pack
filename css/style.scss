@@ -10,20 +10,46 @@ body {
 }
 .cabecalho {
     position: fixed;
-    width: 100%;
+    width: 100vw;
     float: left;
     padding: 3%;
-    background-color: #242524;
+    background-color: red;
     box-shadow: 0 2px 2px #00000050;
+    display: grid;
+    grid-template-areas: ".button-menu .logo";
+    gap: 10px;
 }
+
+.button-menu {
+    display: grid;
+    width: 40px;
+    align-items: center;
+    cursor: pointer;
+    background-color: black;
+    .barra {
+        height: 6px;
+        background-color: white;
+        border-radius: 50px;
+    }
+    #barra-1 {
+        width: 100%;
+    }
+    #barra-2 {
+        width: 70%;
+    }
+}
+.close {
+    display: none;
+}
+
 .logo {
-    z-index: 999;
     width: 200px;
     height: 24px;
     float: left;
     margin: 0 5%;
     background: url('../media/Logotipo/Logotipo-a.png') center center/100% no-repeat;
     font-size: 0;
+    background-color: black;
 }
 
 //MENU:
@@ -63,18 +89,6 @@ body {
     color: white;
     transition: 0.25s ease;
 }
-.button-menu {
-    width: auto;
-    height: 24px;
-    float: left;
-    text-align: center;
-    color: #dedede;
-    cursor: pointer;
-    background-color: transparent;
-}
-#close-menu {
-    display: none;
-}
 
 //BANNER:
 .banner {
@@ -83,7 +97,7 @@ body {
     text-align: center;
     margin-top: calc(24px + 6%);
     padding: 3%;
-    background: linear-gradient(rgba(162, 2, 255) 10%, rgba(162, 2, 255, 0.5) 50%, #242524 100%);
+    background: linear-gradient(red,green);
 }
 .title {
     width: 100%;
