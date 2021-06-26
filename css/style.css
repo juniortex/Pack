@@ -17,11 +17,6 @@
   line-height: 1.5em;
 }
 
-/*html, body {
-    display: grid;
-    grid-column: 1;
-    grid-row: 3;
-}*/
 /*Montserrat
 font-family: 'Montserrat', sans-serif;*/
 /*Poppins
@@ -62,63 +57,92 @@ h5 {
 }
 
 body {
-  background-color: #242524;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 80vw 1fr;
+      grid-template-columns: 1fr 80vw 1fr;
+      grid-template-areas: "header header header" "main main main" "footer footer footer";
+  background-color: #202120;
 }
 
 .cabecalho {
-  position: fixed;
-  width: 100vw;
-  float: left;
-  padding: 3%;
-  background-color: red;
-  -webkit-box-shadow: 0 2px 2px #00000050;
-          box-shadow: 0 2px 2px #00000050;
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: header;
   display: -ms-grid;
   display: grid;
-      grid-template-areas: ".button-menu .logo";
-  gap: 10px;
-}
-
-.button-menu {
-  display: -ms-grid;
-  display: grid;
-  width: 40px;
+  -ms-grid-columns: 30px 1fr 1fr;
+      grid-template-columns: 30px 1fr 1fr;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  cursor: pointer;
-  background-color: black;
+  gap: 20px;
+  background-color: #282928;
+  padding: 20px;
+  -webkit-box-shadow: 0 2px 2px #00000050;
+          box-shadow: 0 2px 2px #00000050;
 }
 
-.button-menu .barra {
-  height: 6px;
+.cabecalho .buttons-menu {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 20px;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.cabecalho .buttons-menu .barra {
+  height: 4px;
+  margin: 4px 0;
   background-color: white;
   border-radius: 50px;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
-.button-menu #barra-1 {
+.cabecalho .buttons-menu .b1 {
   width: 100%;
 }
 
-.button-menu #barra-2 {
+.cabecalho .buttons-menu .b2 {
   width: 70%;
 }
 
-.close {
+.cabecalho .buttons-menu #close {
   display: none;
 }
 
-.logo {
-  width: 200px;
-  height: 24px;
-  float: left;
-  margin: 0 5%;
-  background: url("../media/Logotipo/Logotipo-a.png") center center/100% no-repeat;
-  font-size: 0;
-  background-color: black;
+.cabecalho .buttons-menu #close .b1 {
+  width: 80%;
+  -webkit-transform: rotate(40deg) translate(4px, 2px);
+          transform: rotate(40deg) translate(4px, 2px);
 }
 
-.menu {
+.cabecalho .buttons-menu #close .b2 {
+  width: 80%;
+  -webkit-transform: rotate(-40deg) translate(4px, -2px);
+          transform: rotate(-40deg) translate(4px, -2px);
+}
+
+.cabecalho .logo {
+  width: 168px;
+  height: 20px;
+  background: url("../media/Logotipo/Logotipo-a.png") center center/100% no-repeat;
+  font-size: 0;
+  background-color: transparent;
+}
+
+.cabecalho .menu {
   display: none;
   width: 100vw;
   max-width: 300;
@@ -130,7 +154,7 @@ body {
   margin-top: calc(24px + 6%);
 }
 
-.menu ul {
+.cabecalho .menu ul {
   width: 50%;
   height: 100%;
   padding: 0 3%;
@@ -141,51 +165,60 @@ body {
           box-shadow: 1px 0px 8px #00000025;
 }
 
-.menu li {
+.cabecalho .menu li {
   width: 100%;
   padding: 5% 0%;
 }
 
-.menu li a {
+.cabecalho .menu li a {
   font-size: 1em;
   color: #dedede;
   font-weight: 400;
 }
 
-.menu li a i {
+.cabecalho .menu li a i {
   margin-right: 10%;
 }
 
-.menu li a:hover {
+.cabecalho .menu li a:hover {
   color: white;
   -webkit-transition: 0.25s ease;
   transition: 0.25s ease;
 }
 
-.banner {
-  width: 100%;
-  float: left;
-  text-align: center;
-  margin-top: calc(24px + 6%);
-  padding: 3%;
-  background: -webkit-gradient(linear, left top, left bottom, from(red), to(green));
-  background: linear-gradient(red, green);
+main {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: main;
 }
 
-.title {
+main .banner {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-column: 1/4;
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 1;
+  grid-row: 2/3;
+  background-color: green;
+}
+
+main .banner .title {
   width: 100%;
 }
 
-.title h3 {
+main .banner .title h3 {
   color: #504550;
   font-size: 1em;
 }
 
-.buttons {
+main .banner .buttons {
   width: 100%;
 }
 
-.button {
+main .banner .button {
   width: 80%;
   text-align: center;
   padding: 3% 4%;
@@ -197,28 +230,28 @@ body {
   color: white;
 }
 
-#button-cadastrar {
+main .banner #button-cadastrar {
   float: left;
 }
 
-#button-sobre {
+main .banner #button-sobre {
   float: right;
   background-color: white;
   color: #ff5100;
 }
 
-button i {
+main .banner button i {
   margin-top: 1%;
   float: right;
 }
 
-.servicos {
+main .servicos {
   width: 100%;
   padding: 3%;
   float: left;
 }
 
-.servico {
+main .servico {
   width: 100%;
   background: -webkit-gradient(linear, left bottom, left top, from(#00000099), color-stop(20%, #24252400));
   background: linear-gradient(to top, #00000099 0%, #24252400 20%);
@@ -229,7 +262,7 @@ button i {
           box-shadow: 2px 2px 5px #00000050, -4px -4px 5px #a200ff99;
 }
 
-.servico h2 {
+main .servico h2 {
   width: 100%;
   padding: 80px 0;
   text-align: center;
@@ -239,16 +272,16 @@ button i {
   font-size: 1.8em;
 }
 
-.servico div {
+main .servico div {
   padding: 5%;
 }
 
-.servico h3, h4, p {
+main .servico h3, main h4, main p {
   color: #504550;
   margin: 5px 0;
 }
 
-.newsletter {
+main .newsletter {
   width: 100%;
   float: left;
   text-align: center;
@@ -256,16 +289,16 @@ button i {
   padding: 3%;
 }
 
-.newsletter h3 {
+main .newsletter h3 {
   color: #504550;
   font-size: 1em;
 }
 
-.newsletter form {
+main .newsletter form {
   margin: 2% 0;
 }
 
-input {
+main input {
   width: 80%;
   border-radius: 30px;
   padding: 2% 4%;
@@ -274,26 +307,24 @@ input {
 }
 
 footer {
-  width: 100%;
+  background-color: turquoise;
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: footer;
   padding: 3% 3% 1% 3%;
-  float: left;
   text-align: center;
 }
 
-footer p {
-  font-weight: 600;
-  padding: 3% 3% 0 3%;
-}
-
-.social {
+footer .social {
   width: 100%;
 }
 
-.social a {
+footer .social a {
   margin: 1%;
 }
 
-.social a i {
+footer .social a i {
   font-size: 1.5em;
   width: 44px;
   height: 44px;
@@ -306,8 +337,13 @@ footer p {
           box-shadow: 2px 2px 5px #00000050, -4px -4px 5px #ffffff99;
 }
 
-.social a i:hover {
+footer .social a i:hover {
   background: -webkit-gradient(linear, left bottom, left top, from(#ff7b00), color-stop(60%, #ff5100));
   background: linear-gradient(to top, #ff7b00 0%, #ff5100 60%);
+}
+
+footer p {
+  font-weight: 600;
+  padding: 3% 3% 0 3%;
 }
 /*# sourceMappingURL=style.css.map */

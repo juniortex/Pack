@@ -39,17 +39,21 @@
 
 <body>
     <header class="cabecalho">
-        <div class="button-menu open">
-            <div class="barra" id="barra-1"></div>
-            <div class="barra" id="barra-2"></div>
+        <div class="buttons-menu">
+            <div class="button-menu" id="open">
+                <div class="barra b1"></div>
+                <div class="barra b2"></div>
+            </div>
+            <div class="button-menu" id="close">
+                <div class="barra b1"></div>
+                <div class="barra b2"></div>
+            </div>
         </div>
-        <div class="button-menu close">
-            <div class="barra" id="barra-1"></div>
-            <div class="barra" id="barra-2"></div>
+
+        <div class="logo">
+            <a href="index.html"></a>
         </div>
-        <a href="index.html">
-            <h1 class="logo">Logo</h1>
-        </a>
+
         <nav class="menu">
             <ul class="">
                 <li><a href="#"><i class="fas fa-house-user"></i> Home</a></li>
@@ -60,64 +64,64 @@
         </nav>
     </header>
     
-    <section class="banner">
-        <div class="title">
-            <h2>BANNER RESPONSIVO</h2>
-            <h3>Um site deve ser funcional e bonito em todos os diferentes tipos de dispositivos.</h4>
-        </div>
-        <div class="buttons">
-            <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
-            <button id="button-sobre" class="button">SOBRE<i class="fas fa-info-circle"></i></button>
-        </div>
-    </section>
-
-    <main class="servicos">
-        <article class="servico">
-            <a href="#">
-                <h2>Artigo 01</h2>
-            </a>
-            <div class="inner">
-                <a href="#">
-                    <h3>Título</h3>
-                </a>
-                <h4>Sub-título</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+    <main class="conteúdo">
+        <section class="banner">
+            <div class="title">
+                <h2>BANNER RESPONSIVO</h2>
+                <h3>Um site deve ser funcional e bonito em todos os diferentes tipos de dispositivos.</h4>
             </div>
-        </article>
-        <article class="servico">
-            <a href="#">
-                <h2>Artigo 02</h2>
-            </a>
-            <div class="inner">
-                <a href="#">
-                    <h3>Título</h3>
-                </a>
-                <h4>Sub-título</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+            <div class="buttons">
+                <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
+                <button id="button-sobre" class="button">SOBRE<i class="fas fa-info-circle"></i></button>
             </div>
-        </article>
-        <article class="servico">
-            <a href="#">
-                <h2>Artigo 03</h2>
-            </a>
-            <div class="inner">
+        </section>
+        <section class="servicos">
+            <article class="servico">
                 <a href="#">
-                    <h3>Título</h3>
+                    <h2>Artigo 01</h2>
                 </a>
-                <h4>Sub-título</h4>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
-            </div>
-        </article>
+                <div class="inner">
+                    <a href="#">
+                        <h3>Título</h3>
+                    </a>
+                    <h4>Sub-título</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+                </div>
+            </article>
+            <article class="servico">
+                <a href="#">
+                    <h2>Artigo 02</h2>
+                </a>
+                <div class="inner">
+                    <a href="#">
+                        <h3>Título</h3>
+                    </a>
+                    <h4>Sub-título</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+                </div>
+            </article>
+            <article class="servico">
+                <a href="#">
+                    <h2>Artigo 03</h2>
+                </a>
+                <div class="inner">
+                    <a href="#">
+                        <h3>Título</h3>
+                    </a>
+                    <h4>Sub-título</h4>
+                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eos repellat necessitatibus architecto odio error maxime corporis quae fuga aperiam. Eius quae quasi facilis molestiae rem hic nam aliquid? Cum, at!</p>
+                </div>
+            </article>
+        </section>
+        <section class="newsletter">
+            <h2>Inscreva-se agora</h2>
+            <h3>Receba novidades, dicas e muito mais!</h3>
+            <form action="">
+                <input type="email" name="email" placeholder="Digite seu e-mail...">
+                <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
+            </form>
+        </section>
     </main>
-
-    <section class="newsletter">
-        <h2>Inscreva-se agora</h2>
-        <h3>Receba novidades, dicas e muito mais!</h3>
-        <form action="">
-            <input type="email" name="email" placeholder="Digite seu e-mail...">
-            <button id="button-cadastrar" class="button">CADASTRAR<i class="fa fa-arrow-circle-right"></i></button>
-        </form>
-    </section>
 
     <footer class="rodape">
         <div class="social">
@@ -137,15 +141,15 @@ integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
 crossorigin="anonymous">
 </script>
 <script name="open/close menu">
-$(".open").click(function(){
+$("#open").click(function(){
     $(".menu").show();
-    $(".close").show();
-    $(".open").hide();
+    $("#close").show();
+    $("#open").hide();
 });
-$(".close").click(function(){
+$("#close").click(function(){
     $(".menu").hide();
-    $(".close").hide();
-    $(".open").show();
+    $("#close").hide();
+    $("#open").show();
 });
 </script>
 
