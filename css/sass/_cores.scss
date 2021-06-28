@@ -1,9 +1,21 @@
-//BACKGROUNDS:
+$cor-tema: #7400e0;
+
+//TONS DE CINZA:
+$gray-00: #090909;
 $gray-01: #191919;
 $gray-02: #292929;
 $gray-03: #393939;
+$gray-08: #898989;
+$gray-cc: #AAAAAA;
+$gray-dd: #DDDDDD;
+$gray-ff: #FFFFFF;
+
+//OVERLAYS:
 $overlay-dark: rgba(0,0,0,0.5);
 $overlay-clear: rgba(225,225,225,0.5);
 
 //SOMBRAS:
 $sombra-default: rgba(0,0,0,0.2);
+
+//BRILHOS:
+$brilho-default: rgba(225,225,225,0.2);

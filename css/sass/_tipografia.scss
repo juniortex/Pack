@@ -1,8 +1,9 @@
 //TIPOGRAFIA
 @import "fontes";
+@import "cores";
 
 h1, h2, h3, h4, h5, h6, p {
-    color: #504550;
+    color: $gray-ff;
 }
 
 h1 {

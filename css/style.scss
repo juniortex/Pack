@@ -11,27 +11,31 @@
 body {
     display: grid;
     grid-template-columns: 1fr 80vw 1fr;
-    grid-auto-rows: 60px 1fr 60px;
-    grid-template-areas: 
+    grid-auto-rows: 60px 300px auto 60px;
+    grid-template-areas:
     "header header header"
+    "banner banner banner"
     "aside-left main aside-right"
     "footer footer footer";
     background-color: #202120;
 }
+
 header {
     grid-area: header;
     z-index: 999;
     display: grid;
-    grid-template-columns: 30px 1fr;
+    grid-template-columns: auto auto 1fr;
+    grid-template-areas: "buttons-menu logo none";
     align-items: center;
     gap: 20px;
     background-color: $gray-02;
     padding: 20px;
     box-shadow: 0 2px 2px $sombra-default;
     .buttons-menu {
+        grid-area: buttons-menu;
         display: grid;
         align-items: center;
-        width: 100%;
+        width: 30px;
         height: 20px;
         cursor: pointer;
         .barra {
@@ -57,6 +61,7 @@ header {
     }
     
     .logo {
+        grid-area: logo;
         width: 168px;
         height: 20px;
         background-color: $gray-03;
@@ -79,17 +84,16 @@ header {
             padding: 0 0 20px 24px;
             float: left;
             text-align: start;
-            background-color: #202120;
-            box-shadow: 1px 0px 8px #00000025;
+            background-color: $gray-01;
+            box-shadow: 2px 0px 5px $sombra-default;
             &::-webkit-scrollbar {
                 width: 8px;
             }
             &::-webkit-scrollbar-track {
-                background: #202120;
-                margin: 10px;
+                background: $gray-01;
+                margin: 4px;
             }
             &::-webkit-scrollbar-thumb {
-                background-color: transparent;
                 border-radius: 20px;
             }
             &:hover {
@@ -97,11 +101,14 @@ header {
                     width: 8px;
                 }
                 &::-webkit-scrollbar-track {
-                    background: #202120;
+                    background: $gray-02;
                 }
                 &::-webkit-scrollbar-thumb {
-                    background-color: rgba(225, 225, 225, 0.3);
+                    background-color: $gray-08;
                     border-radius: 20px;
+                    &:hover {
+                        background-color: $gray-cc;
+                    }
                 }
             }
             li {
@@ -109,105 +116,112 @@ header {
                 margin: 20px 0;
                 a {
                     font-size: 1em;
-                    color: #dedede;
+                    color: $gray-dd;
                     font-weight: 400;
                     i {
                         margin-right: 10%;
                     }
                 }
                 a:hover {
-                    color: white;
+                    color: $gray-ff;
                 }
             }
             hr {
-                border: 1px solid #303130;
+                border: 1px solid $gray-02;
             }
+        }
+    }
+}
+
+.banner {
+    grid-area: banner;
+    display: grid;
+    background: linear-gradient(to top, $gray-01, $gray-03);
+    #texto {
+        display: grid;
+        justify-items: center;
+        align-content: center;
+        text-align: center;
+        h2 {
+            color: $gray-ff;
+        } 
+        h3 {
+            color: rgba($gray-ff,0.75);
+            padding: 0 10%;
+        }
+    }
+    #actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 5%;
+        .button {
+            align-self: center;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            justify-items: center;
+            align-items: center;
+            padding: 1em;
+            width: 80%;
+            max-width: 200px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 700;
+            background-color: $gray-03;
+            color: $gray-ff;
+        }
+        #button-cadastrar {
+            justify-self: right;
+        }
+        #button-sobre {
+            justify-self: left;
+            background-color: $gray-ff;
+            color: $gray-03;
+        }
+        .button:hover, #button-sobre:hover {
+            background-color: $cor-tema;
+            color: $gray-ff;
         }
     }
 }
     
 main {
-    min-height: calc(100vh - 120px);
     grid-area: main;
-    border-left: 1px solid #303130;
-    border-right: 1px solid #303130;
-    /*margin-top: 60px;
-    gap: 20px;
-    background-color: black;
-    .banner {
-        grid-area: banner;
-        display: grid;
-        background-color: red;
-        .title {
-            width: 100%;
-            h3 {
-                color: #AAABAA;
-                font-size: 1em;
-            }
-        }
-        .buttons {
-            width: 100%;
-        }
-        .button {
-            width: 80%;
-            text-align: center;
-            padding: 3% 4%;
-            margin: 5px 10%;
-            border-radius: 30px;
-            cursor: pointer;
-            font-weight: 700;
-            background-color: #ff5100;
-            color: white;
-        }
-        #button-cadastrar {
-            float: left;
-        }
-        #button-sobre {
-            float: right;
-            background-color: white;
-            color: #ff5100;
-        }
-        button i {
-            margin-top: 1%;
-            float: right;
-        }
-    }   
-
+    display: grid;
+    padding: 5%;
+    background-color: rgba(green,0.2);
     .servicos {
         grid-area: servicos;
-        width: 100%;
-        padding: 3%;
-        background-color: red;
+        display: grid;
+        grid-template-columns: 1fr;
+        background-color: rgba(green,0.3);
         .servico {
             display: grid;
-            width: 100%;
-            background: linear-gradient(to top, #00000099 0%, #24252400 20%);
+            background: linear-gradient(to top, $gray-02 0%, $gray-01 20%);
             text-align: left;
-            border-radius: 20px;
-            margin: 5% 0;
             box-shadow:
                 2px 2px 5px #00000050,
-                -4px -4px 5px #a200ff99;
+                -2px -2px 5px #a200ff99;
             h2 {
                 width: 100%;
                 padding: 80px 0;
                 text-align: center;
-                background: linear-gradient(to top, #242524 60%, #a200ff99 120%);
-                border-radius: 20px 20px 0 0;
+                background: linear-gradient(to top, $gray-01 60%, #a200ff99 120%);
                 font-size: 1.8em;
             }
             h3, h4, p {
-                color: #504550;
+                color: $gray-cc;
                 margin: 5px 0;
             }
             div {
                 padding: 5%;
             }
         }
-    }*/
+    }
 }
 
 aside {
+    display: none;
+    background-color: $gray-02;
     .left {
         grid-area: aside-left;
     }
@@ -218,33 +232,43 @@ aside {
 
 footer {
     grid-area: footer;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: "copyright social";
+    align-items: center;
+    justify-content: space-between;
     background-color: $gray-02;
     box-shadow: 0px -2px 5px $sombra-default;
-    /*padding: 3% 3% 1% 3%;
+    padding: 20px;
     text-align: center;
+    .copyright {
+        grid-area: copyright;
+        display: grid;
+        height: 30px;
+        align-items: center;
+        p {
+            color: $gray-dd;
+        }
+    }
     .social {
-    width: 100%;
+        grid-area: social;
+        display: grid;
+        grid-template-columns: 40px 40px auto;
         a {
-        margin: 1%;
-            i {
-            font-size: 1.5em;
-            width: 44px;
-            height: 44px;
-            background: linear-gradient(to top, #eee 0%, #bcbcbc 60%);
+            display: grid;
+            align-items: center;
+            justify-content: center;
+            color: $gray-dd;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            padding: 12px;
-            color: white;
+            background: linear-gradient(to bottom, $gray-01 0%, $gray-03 100%);
             box-shadow:
-            2px 2px 5px #00000050,
-            -4px -4px 5px #ffffff99;
+            2px 2px 5px $sombra-default,
+            -2px -2px 5px $brilho-default;
                 &:hover {
-                background: linear-gradient(to top, #ff7b00 0%, #ff5100 60%);
-                }
+                background: linear-gradient(to bottom, $cor-tema 0%, $cor-tema 60%);
             }
         }
     }
-    p {
-        font-weight: 600;
-        padding: 3% 3% 0 3%;
-    }*/
 }
