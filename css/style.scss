@@ -11,123 +11,150 @@
 body {
     display: grid;
     grid-template-columns: 1fr 80vw 1fr;
-    grid-auto-rows: 60px 300px auto 60px;
+    grid-auto-rows: 6rem 30rem auto 6rem;
     grid-template-areas:
     "header header header"
     "banner banner banner"
     "aside-left main aside-right"
     "footer footer footer";
     background-color: #202120;
+    &::-webkit-scrollbar {
+        width: 0.8rem;
+    }
+    &::-webkit-scrollbar-track {
+        background: $gray-01;
+        margin: 0.4rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: $gray-08;
+        border-radius: 2rem;
+        &:hover {
+            background-color: $gray-cc;
+        }
+    }
 }
 
 header {
-    grid-area: header;
+    position: fixed;
+    width: 100vw;
+    //grid-area: header;
     z-index: 999;
     display: grid;
     grid-template-columns: auto auto 1fr;
-    grid-template-areas: "buttons-menu logo none";
+    grid-template-areas: "buttons-menu logo";
     align-items: center;
-    gap: 20px;
+    gap: 2rem;
     background-color: $gray-02;
-    padding: 20px;
-    box-shadow: 0 2px 2px $sombra-default;
+    padding: 2rem;
+    box-shadow: 0 0.2rem 0.2rem $sombra-default;
     .buttons-menu {
         grid-area: buttons-menu;
         display: grid;
+        grid-template-columns: 3rem auto;
+        grid-template-rows: 2rem;
         align-items: center;
-        width: 30px;
-        height: 20px;
         cursor: pointer;
+        //border: 0.1rem solid turquoise;
         .barra {
-            height: 4px;
-            margin: 4px 0;
-            background-color: white;
-            border-radius: 50px;
+            height: 0.4rem;
+            margin: 0.4rem 0;
+            background-color: $gray-ff;
+            border-radius: 5rem;
         }
         .b2 {
             width: 70%;
         }
         #close {
                 display: none;
+                //border: 0.1rem solid turquoise;
+                width: 3rem;
             .b1 {
                 width: 80%;
-                transform: rotate(40deg) translate(4px, 2px);
+                transform: rotate(30deg) translate(0.1rem, 0.4rem);
             }
             .b2 {
                 width: 80%;
-                transform: rotate(-40deg) translate(4px, -2px);
+                transform: rotate(-30deg) translate(0.1rem, -0.4rem);
             }
         }
     }
-    
     .logo {
         grid-area: logo;
-        width: 168px;
-        height: 20px;
+        width: 16.8rem;
+        height: 2rem;
         background-color: $gray-03;
         //background: url('../media/Logotipo/Logotipo-a.png') center center/100% no-repeat;
         cursor: pointer;
     }
-
     .menu {
-        margin: 40px 0 0 -20px;
+        margin: 4rem 0 0 -2rem;
         position: fixed;
         display: none;
         width: 100vw;
         height: 100vh;
         background-color: $overlay-dark;
         ul {
-            width: 200px;
+            width: 20rem;
             max-width: 50vw;
             height: 100vh;
             overflow-y: scroll;
-            padding: 0 0 20px 24px;
             float: left;
             text-align: start;
             background-color: $gray-01;
-            box-shadow: 2px 0px 5px $sombra-default;
+            box-shadow: 0.2rem 0 0.5rem $sombra-default;
+            padding: 0.5rem;
             &::-webkit-scrollbar {
-                width: 8px;
+                width: 0.8rem;
             }
             &::-webkit-scrollbar-track {
                 background: $gray-01;
-                margin: 4px;
+                margin: 0.4rem;
             }
             &::-webkit-scrollbar-thumb {
-                border-radius: 20px;
+                border-radius: 2rem;
             }
             &:hover {
                 &::-webkit-scrollbar {
-                    width: 8px;
+                    width: 0.8rem;
                 }
                 &::-webkit-scrollbar-track {
                     background: $gray-02;
                 }
                 &::-webkit-scrollbar-thumb {
                     background-color: $gray-08;
-                    border-radius: 20px;
+                    border-radius: 2rem;
                     &:hover {
                         background-color: $gray-cc;
                     }
                 }
             }
             li {
-                width: 100%;
-                margin: 20px 0;
+                display: grid;
+                //border: 0.1rem solid rgb(255, 196, 0);
                 a {
-                    font-size: 1em;
+                    //border: 0.1rem solid rgb(255, 196, 0);
+                    display: grid;
+                    grid-template-columns: 1.6rem 1fr;
+                    align-items: bottom;
+                    gap: 2rem;
+                    padding: 1rem 1.5rem;
+                    font-size: 1.6rem;
                     color: $gray-dd;
                     font-weight: 400;
                     i {
-                        margin-right: 10%;
+                        font-size: 1.8rem;
+                    }
+                    &:hover {
+                        color: $gray-ff;
                     }
                 }
-                a:hover {
-                    color: $gray-ff;
+                &:hover {
+                    background-color: rgba($gray-ff,0.1);
                 }
             }
             hr {
-                border: 1px solid $gray-02;
+                border: 0.1rem solid $gray-02;
+                margin: 1rem;
             }
         }
     }
@@ -188,32 +215,29 @@ main {
     grid-area: main;
     display: grid;
     padding: 5%;
-    background-color: rgba(green,0.2);
+    background-color: rgba($cor-tema,0.2);
     .servicos {
         grid-area: servicos;
         display: grid;
-        grid-template-columns: 1fr;
-        background-color: rgba(green,0.3);
+        grid-template-columns: 1fr 1fr 1fr;
+        background-color: rgba($cor-tema,0.3);
         .servico {
+            min-width: 300px;
+            background-color: black;
             display: grid;
-            background: linear-gradient(to top, $gray-02 0%, $gray-01 20%);
-            text-align: left;
             box-shadow:
                 2px 2px 5px #00000050,
                 -2px -2px 5px #a200ff99;
             h2 {
-                width: 100%;
-                padding: 80px 0;
+                background-color: rgba($cor-tema,1);
                 text-align: center;
-                background: linear-gradient(to top, $gray-01 60%, #a200ff99 120%);
                 font-size: 1.8em;
             }
             h3, h4, p {
-                color: $gray-cc;
-                margin: 5px 0;
+                color: rgba($gray-ff,0.8);
             }
             div {
-                padding: 5%;
+                padding: 10%;
             }
         }
     }
@@ -235,7 +259,7 @@ footer {
     display: grid;
     grid-template-columns: auto auto;
     grid-template-areas: "copyright social";
-    align-items: center;
+    align-content: center;
     justify-content: space-between;
     background-color: $gray-02;
     box-shadow: 0px -2px 5px $sombra-default;
@@ -244,7 +268,6 @@ footer {
     .copyright {
         grid-area: copyright;
         display: grid;
-        height: 30px;
         align-items: center;
         p {
             color: $gray-dd;
@@ -268,6 +291,7 @@ footer {
             -2px -2px 5px $brilho-default;
                 &:hover {
                 background: linear-gradient(to bottom, $cor-tema 0%, $cor-tema 60%);
+                color: $gray-ff;
             }
         }
     }

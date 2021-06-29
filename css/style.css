@@ -12,7 +12,7 @@
           box-sizing: border-box;
   list-style: none;
   font-family: 'Quicksand', sans-serif;
-  font-size: 100%;
+  font-size: 62.5%;
   text-decoration: none;
   line-height: 1.5em;
 }
@@ -30,17 +30,17 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 3.2rem;
   font-weight: 900;
 }
 
 h2 {
-  font-size: 1.8em;
+  font-size: 2.8rem;
   font-weight: 700;
 }
 
 h3 {
-  font-size: 1.6em;
+  font-size: 2.4rem;
   font-weight: 600;
 }
 
@@ -49,11 +49,11 @@ h4, h5 {
 }
 
 h4 {
-  font-size: 1.4em;
+  font-size: 2.2rem;
 }
 
 h5 {
-  font-size: 1.2em;
+  font-size: 2rem;
 }
 
 body {
@@ -61,30 +61,46 @@ body {
   display: grid;
   -ms-grid-columns: 1fr 80vw 1fr;
       grid-template-columns: 1fr 80vw 1fr;
-  grid-auto-rows: 60px 300px auto 60px;
+  grid-auto-rows: 6rem 30rem auto 6rem;
       grid-template-areas: "header header header" "banner banner banner" "aside-left main aside-right" "footer footer footer";
   background-color: #202120;
 }
 
+body::-webkit-scrollbar {
+  width: 0.8rem;
+}
+
+body::-webkit-scrollbar-track {
+  background: #191919;
+  margin: 0.4rem;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #898989;
+  border-radius: 2rem;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #AAAAAA;
+}
+
 header {
-  -ms-grid-row: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 3;
-  grid-area: header;
+  position: fixed;
+  width: 100vw;
   z-index: 999;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: auto auto 1fr;
       grid-template-columns: auto auto 1fr;
-      grid-template-areas: "buttons-menu logo none";
+      grid-template-areas: "buttons-menu logo";
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 20px;
+  gap: 2rem;
   background-color: #292929;
-  padding: 20px;
-  -webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  -webkit-box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0 0.2rem 0.2rem rgba(0, 0, 0, 0.2);
 }
 
 header .buttons-menu {
@@ -93,19 +109,21 @@ header .buttons-menu {
   grid-area: buttons-menu;
   display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 3rem auto;
+      grid-template-columns: 3rem auto;
+  -ms-grid-rows: 2rem;
+      grid-template-rows: 2rem;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 30px;
-  height: 20px;
   cursor: pointer;
 }
 
 header .buttons-menu .barra {
-  height: 4px;
-  margin: 4px 0;
-  background-color: white;
-  border-radius: 50px;
+  height: 0.4rem;
+  margin: 0.4rem 0;
+  background-color: #FFFFFF;
+  border-radius: 5rem;
 }
 
 header .buttons-menu .b2 {
@@ -114,32 +132,33 @@ header .buttons-menu .b2 {
 
 header .buttons-menu #close {
   display: none;
+  width: 3rem;
 }
 
 header .buttons-menu #close .b1 {
   width: 80%;
-  -webkit-transform: rotate(40deg) translate(4px, 2px);
-          transform: rotate(40deg) translate(4px, 2px);
+  -webkit-transform: rotate(30deg) translate(0.1rem, 0.4rem);
+          transform: rotate(30deg) translate(0.1rem, 0.4rem);
 }
 
 header .buttons-menu #close .b2 {
   width: 80%;
-  -webkit-transform: rotate(-40deg) translate(4px, -2px);
-          transform: rotate(-40deg) translate(4px, -2px);
+  -webkit-transform: rotate(-30deg) translate(0.1rem, -0.4rem);
+          transform: rotate(-30deg) translate(0.1rem, -0.4rem);
 }
 
 header .logo {
   -ms-grid-row: 1;
   -ms-grid-column: 2;
   grid-area: logo;
-  width: 168px;
-  height: 20px;
+  width: 16.8rem;
+  height: 2rem;
   background-color: #393939;
   cursor: pointer;
 }
 
 header .menu {
-  margin: 40px 0 0 -20px;
+  margin: 4rem 0 0 -2rem;
   position: fixed;
   display: none;
   width: 100vw;
@@ -148,33 +167,33 @@ header .menu {
 }
 
 header .menu ul {
-  width: 200px;
+  width: 20rem;
   max-width: 50vw;
   height: 100vh;
   overflow-y: scroll;
-  padding: 0 0 20px 24px;
   float: left;
   text-align: start;
   background-color: #191919;
-  -webkit-box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
-          box-shadow: 2px 0px 5px rgba(0, 0, 0, 0.2);
+  -webkit-box-shadow: 0.2rem 0 0.5rem rgba(0, 0, 0, 0.2);
+          box-shadow: 0.2rem 0 0.5rem rgba(0, 0, 0, 0.2);
+  padding: 0.5rem;
 }
 
 header .menu ul::-webkit-scrollbar {
-  width: 8px;
+  width: 0.8rem;
 }
 
 header .menu ul::-webkit-scrollbar-track {
   background: #191919;
-  margin: 4px;
+  margin: 0.4rem;
 }
 
 header .menu ul::-webkit-scrollbar-thumb {
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 header .menu ul:hover::-webkit-scrollbar {
-  width: 8px;
+  width: 0.8rem;
 }
 
 header .menu ul:hover::-webkit-scrollbar-track {
@@ -183,7 +202,7 @@ header .menu ul:hover::-webkit-scrollbar-track {
 
 header .menu ul:hover::-webkit-scrollbar-thumb {
   background-color: #898989;
-  border-radius: 20px;
+  border-radius: 2rem;
 }
 
 header .menu ul:hover::-webkit-scrollbar-thumb:hover {
@@ -191,26 +210,40 @@ header .menu ul:hover::-webkit-scrollbar-thumb:hover {
 }
 
 header .menu ul li {
-  width: 100%;
-  margin: 20px 0;
+  display: -ms-grid;
+  display: grid;
 }
 
 header .menu ul li a {
-  font-size: 1em;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1.6rem 1fr;
+      grid-template-columns: 1.6rem 1fr;
+  -webkit-box-align: bottom;
+      -ms-flex-align: bottom;
+          align-items: bottom;
+  gap: 2rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.6rem;
   color: #DDDDDD;
   font-weight: 400;
 }
 
 header .menu ul li a i {
-  margin-right: 10%;
+  font-size: 1.8rem;
 }
 
 header .menu ul li a:hover {
   color: #FFFFFF;
 }
 
+header .menu ul li:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
 header .menu ul hr {
-  border: 1px solid #292929;
+  border: 0.1rem solid #292929;
+  margin: 1rem;
 }
 
 .banner {
@@ -295,44 +328,39 @@ main {
   display: -ms-grid;
   display: grid;
   padding: 5%;
-  background-color: rgba(0, 128, 0, 0.2);
+  background-color: rgba(116, 0, 224, 0.2);
 }
 
 main .servicos {
   grid-area: servicos;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr;
-      grid-template-columns: 1fr;
-  background-color: rgba(0, 128, 0, 0.3);
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  background-color: rgba(116, 0, 224, 0.3);
 }
 
 main .servicos .servico {
+  min-width: 300px;
+  background-color: black;
   display: -ms-grid;
   display: grid;
-  background: -webkit-gradient(linear, left bottom, left top, from(#292929), color-stop(20%, #191919));
-  background: linear-gradient(to top, #292929 0%, #191919 20%);
-  text-align: left;
   -webkit-box-shadow: 2px 2px 5px #00000050, -2px -2px 5px #a200ff99;
           box-shadow: 2px 2px 5px #00000050, -2px -2px 5px #a200ff99;
 }
 
 main .servicos .servico h2 {
-  width: 100%;
-  padding: 80px 0;
+  background-color: #7400e0;
   text-align: center;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(60%, #191919), color-stop(120%, #a200ff99));
-  background: linear-gradient(to top, #191919 60%, #a200ff99 120%);
   font-size: 1.8em;
 }
 
 main .servicos .servico h3, main .servicos .servico h4, main .servicos .servico p {
-  color: #AAAAAA;
-  margin: 5px 0;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 main .servicos .servico div {
-  padding: 5%;
+  padding: 10%;
 }
 
 aside {
@@ -362,9 +390,8 @@ footer {
   -ms-grid-columns: auto auto;
       grid-template-columns: auto auto;
       grid-template-areas: "copyright social";
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -381,7 +408,6 @@ footer .copyright {
   grid-area: copyright;
   display: -ms-grid;
   display: grid;
-  height: 30px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -423,5 +449,6 @@ footer .social a {
 footer .social a:hover {
   background: -webkit-gradient(linear, left top, left bottom, from(#7400e0), color-stop(60%, #7400e0));
   background: linear-gradient(to bottom, #7400e0 0%, #7400e0 60%);
+  color: #FFFFFF;
 }
 /*# sourceMappingURL=style.css.map */
