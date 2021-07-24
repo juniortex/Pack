@@ -37,10 +37,10 @@ body {
 header {
     position: fixed;
     width: 100vw;
-    //grid-area: header;
+    grid-area: header;
     z-index: 999;
     display: grid;
-    grid-template-columns: auto auto 1fr;
+    grid-template-columns: 2.6rem 16.8rem;
     grid-template-areas: "buttons-menu logo";
     align-items: center;
     gap: 2rem;
@@ -50,7 +50,6 @@ header {
     .buttons-menu {
         grid-area: buttons-menu;
         display: grid;
-        grid-template-columns: 3rem auto;
         grid-template-rows: 2rem;
         align-items: center;
         cursor: pointer;
@@ -80,21 +79,28 @@ header {
     }
     .logo {
         grid-area: logo;
-        width: 16.8rem;
         height: 2rem;
         background-color: $gray-03;
         //background: url('../media/Logotipo/Logotipo-a.png') center center/100% no-repeat;
         cursor: pointer;
     }
-    .menu {
-        margin: 4rem 0 0 -2rem;
+}
+
+//CONTEÚDO:
+.menu {
+    display: none;
+    .menu-conteiner {
+        padding-top: 6rem;
         position: fixed;
-        display: none;
+        display: grid;
+        grid-template-columns: 25rem auto;
+        grid-template-areas: "menu-lateral overlay";
         width: 100vw;
         height: 100vh;
         background-color: $overlay-dark;
+        //border: 0.1rem solid rgb(255, 196, 0);
         ul {
-            width: 20rem;
+            grid-area: menu-lateral;
             max-width: 50vw;
             height: 100vh;
             overflow-y: scroll;
@@ -102,7 +108,8 @@ header {
             text-align: start;
             background-color: $gray-01;
             box-shadow: 0.2rem 0 0.5rem $sombra-default;
-            padding: 0.5rem;
+            padding-bottom: 6.5rem;
+            //border: 0.1rem solid rgb(255, 196, 0);
             &::-webkit-scrollbar {
                 width: 0.8rem;
             }
@@ -114,15 +121,8 @@ header {
                 border-radius: 2rem;
             }
             &:hover {
-                &::-webkit-scrollbar {
-                    width: 0.8rem;
-                }
-                &::-webkit-scrollbar-track {
-                    background: $gray-02;
-                }
                 &::-webkit-scrollbar-thumb {
-                    background-color: $gray-08;
-                    border-radius: 2rem;
+                    background-color: $gray-06;
                     &:hover {
                         background-color: $gray-cc;
                     }
@@ -130,13 +130,14 @@ header {
             }
             li {
                 display: grid;
+                margin: 1rem 0.5rem;
                 //border: 0.1rem solid rgb(255, 196, 0);
                 a {
                     //border: 0.1rem solid rgb(255, 196, 0);
                     display: grid;
                     grid-template-columns: 1.6rem 1fr;
                     align-items: bottom;
-                    gap: 2rem;
+                    gap: 2.8rem;
                     padding: 1rem 1.5rem;
                     font-size: 1.6rem;
                     color: $gray-dd;
@@ -146,15 +147,16 @@ header {
                     }
                     &:hover {
                         color: $gray-ff;
+                        background-color: rgba($gray-ff,0.1);
                     }
-                }
-                &:hover {
-                    background-color: rgba($gray-ff,0.1);
                 }
             }
             hr {
                 border: 0.1rem solid $gray-02;
                 margin: 1rem;
+            }
+            .overlay {
+                grid-area: overlay;
             }
         }
     }
@@ -180,21 +182,27 @@ header {
     #actions {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 5%;
+        gap: 2.5rem;
         .button {
             align-self: center;
             display: grid;
             grid-template-columns: 1fr auto;
             justify-items: center;
             align-items: center;
-            padding: 1em;
+            padding: 1.6rem;
             width: 80%;
-            max-width: 200px;
-            border-radius: 50px;
+            max-width: 20rem;
+            border-radius: 5rem;
             cursor: pointer;
             font-weight: 700;
             background-color: $gray-03;
             color: $gray-ff;
+            font-size: 1.6rem;
+            //border: 0.1rem solid rgb(255, 196, 0);
+            i {
+                font-size: 1.6rem;
+                //border: 0.1rem solid rgb(255, 196, 0);
+            }
         }
         #button-cadastrar {
             justify-self: right;
@@ -222,19 +230,22 @@ main {
         grid-template-columns: 1fr 1fr 1fr;
         background-color: rgba($cor-tema,0.3);
         .servico {
-            min-width: 300px;
+            min-width: 30rem;
             background-color: black;
             display: grid;
             box-shadow:
-                2px 2px 5px #00000050,
-                -2px -2px 5px #a200ff99;
+                0.2rem 0.2rem 0.5rem $sombra-default,
+                -0.2rem -0.2rem 0.5rem $brilho-default;
             h2 {
                 background-color: rgba($cor-tema,1);
                 text-align: center;
-                font-size: 1.8em;
+                font-size: 2.8rem;
             }
             h3, h4, p {
                 color: rgba($gray-ff,0.8);
+            }
+            p {
+                font-size: 1.6rem;
             }
             div {
                 padding: 10%;
@@ -262,8 +273,8 @@ footer {
     align-content: center;
     justify-content: space-between;
     background-color: $gray-02;
-    box-shadow: 0px -2px 5px $sombra-default;
-    padding: 20px;
+    box-shadow: 0rem -0.2rem 0.5rem $sombra-default;
+    padding: 2rem;
     text-align: center;
     .copyright {
         grid-area: copyright;
@@ -271,24 +282,26 @@ footer {
         align-items: center;
         p {
             color: $gray-dd;
+            font-size: 1.6rem;
         }
     }
     .social {
         grid-area: social;
         display: grid;
-        grid-template-columns: 40px 40px auto;
+        grid-template-columns: 4rem 4rem auto;
         a {
             display: grid;
             align-items: center;
             justify-content: center;
             color: $gray-dd;
-            width: 30px;
-            height: 30px;
+            font-size: 2.5rem;
+            width: 3rem;
+            height: 3rem;
             border-radius: 50%;
             background: linear-gradient(to bottom, $gray-01 0%, $gray-03 100%);
             box-shadow:
-            2px 2px 5px $sombra-default,
-            -2px -2px 5px $brilho-default;
+            0.2rem 0.2rem 0.5rem $sombra-default,
+            -0.2rem -0.2rem 0.5rem $brilho-default;
                 &:hover {
                 background: linear-gradient(to bottom, $cor-tema 0%, $cor-tema 60%);
                 color: $gray-ff;

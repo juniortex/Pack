@@ -51,8 +51,11 @@
         </div>
 
         <a href="index.html" class="logo"></a>
+    </header>
 
-        <nav class="menu">
+    <section class="menu">
+        <nav class="menu-conteiner">
+            <div class="overlay"></div>
             <ul class="menu-lateral">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
@@ -66,7 +69,7 @@
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Promoções</a>
                 </li>
-                <hr>
+                <hr class="linha">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
                 </li>
@@ -79,7 +82,7 @@
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Promoções</a>
                 </li>
-                <hr>
+                <hr class="linha">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
                 </li>
@@ -92,7 +95,7 @@
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Promoções</a>
                 </li>
-                <hr>
+                <hr class="linha">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
                 </li>
@@ -105,7 +108,7 @@
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Promoções</a>
                 </li>
-                <hr>
+                <hr class="linha">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
                 </li>
@@ -118,7 +121,7 @@
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Promoções</a>
                 </li>
-                <hr>
+                <hr class="linha">
                 <li>
                     <a href="#"><i class="fas fa-house-user"></i>Home</a>
                 </li>
@@ -134,7 +137,7 @@
                 <hr>
             </ul>
         </nav>
-    </header>
+    </section>
 
     <section class="banner">
         <div id="texto">
@@ -221,7 +224,7 @@ $("#close").click(function(){
     $("#close").hide();
     $("#open").show();
 });
-$(".menu").click(function(){
+$(".overlay").click(function(){
     $(".menu").hide();
     $("#close").hide();
     $("#open").show();
